@@ -33,7 +33,7 @@ pipeline {
                        }
                                      }
             
-// Cloning Q12branch in server2 container synced docker-volume
+// Cloning Q2branch in server2 container synced docker-volume
              stage ('Q2branch-clone') {
                  agent {
                      label {
