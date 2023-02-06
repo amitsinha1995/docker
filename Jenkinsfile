@@ -6,7 +6,7 @@ pipeline {
               }
         
         stages {
-// I'll create 4 container of httpd image and sync all container with 'docker-volume' where I'll clone my feature branch(Q1/Q2/Q3/Q4).             
+// I'll create 4 container of httpd image and sync all container with 'docker-volume' where I'll clone my feature branch.             
              stage ('container-up') {
                  steps {
                      sh "docker run -itdp 81:80 -v /mnt/Q1branch-vol://usr/local/apache2/htdocs --name server1 httpd"
@@ -26,7 +26,6 @@ pipeline {
                        }
                  steps {
                      sh "rm -rf *"
-                     sh "git init"
                      sh "git clone https://github.com/amitsinha1995/docker.git -b Q1branch"
                      sh "chmod 777 *"
                      sh "cp -r index.html server1://usr/local/apache2/htdocs/"
@@ -43,7 +42,6 @@ pipeline {
                        }
                  steps {
                      sh "rm -rf *"
-                     sh "git init"
                      sh "git clone https://github.com/amitsinha1995/docker.git -b Q2branch"
                      sh "chmod 777 *"
                      sh "cp -r index.html server2://usr/local/apache2/htdocs/"
@@ -60,7 +58,6 @@ pipeline {
                        }
                  steps {
                      sh "rm -rf *"
-                     sh "git init"
                      sh "git clone https://github.com/amitsinha1995/docker.git -b Q3branch"
                      sh "chmod 777 *"
                      sh "cp -r index.html server3://usr/local/apache2/htdocs/"
@@ -77,7 +74,6 @@ pipeline {
                        }
                  steps {
                      sh "rm -rf *"
-                     sh "git init"
                      sh "git clone https://github.com/amitsinha1995/docker.git -b Q4branch"
                      sh "chmod 777 *"
                      sh "cp -r index.html server4://usr/local/apache2/htdocs/"
