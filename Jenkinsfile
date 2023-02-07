@@ -21,12 +21,12 @@ pipeline {
                  agent {
                      label {
                          label 'built-in'
-                         customWorkspace "/mnt/23Q1branch-vol"
+                         customWorkspace "/mnt/23Q1branch-vol/docker-git"
                            }
                        }
                  steps {
                      sh "rm -rf *"
-                     sh "git clone https://github.com/amitsinha1995/docker.git -b 23Q1"
+                     sh "git clone https://github.com/amitsinha1995/docker-git.git -b 23Q1"
                      sh "chmod 777 *"
                      sh "cp -r index.html server1://usr/local/apache2/htdocs/"
                        }
@@ -37,12 +37,12 @@ pipeline {
                  agent {
                      label {
                          label 'built-in'
-                         customWorkspace "/mnt/23Q2branch-vol"
+                         customWorkspace "/mnt/23Q2branch-vol/docker-git"
                            }
                        }
                  steps {
                      sh "rm -rf *"
-                     sh "git clone https://github.com/amitsinha1995/docker.git -b 23Q2"
+                     sh "git clone https://github.com/amitsinha1995/docker-git.git -b 23Q2"
                      sh "chmod 777 *"
                      sh "cp -r index.html server2://usr/local/apache2/htdocs/"
                        }
@@ -53,12 +53,12 @@ pipeline {
                  agent {
                      label {
                          label 'built-in'
-                         customWorkspace "/mnt/23Q3branch-vol"
+                         customWorkspace "/mnt/23Q3branch-vol/docker-git"
                            }
                        }
                  steps {
                      sh "rm -rf *"
-                     sh "git clone https://github.com/amitsinha1995/docker.git -b 23Q3"
+                     sh "git clone https://github.com/amitsinha1995/docker-git.git -b 23Q3"
                      sh "chmod 777 *"
                      sh "cp -r index.html server3://usr/local/apache2/htdocs/"
                        }
@@ -69,12 +69,12 @@ pipeline {
                  agent {
                      label {
                          label 'built-in'
-                         customWorkspace "/mnt/23Q4branch-vol"
+                         customWorkspace "/mnt/23Q4branch-vol/docker-git"
                            }
                        }
                  steps {
                      sh "rm -rf *"
-                     sh "git clone https://github.com/amitsinha1995/docker.git -b 23Q4"
+                     sh "git clone https://github.com/amitsinha1995/docker-git.git -b 23Q4"
                      sh "chmod 777 *"
                      sh "cp -r index.html server4://usr/local/apache2/htdocs/"
                        }
