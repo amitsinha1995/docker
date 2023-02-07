@@ -30,8 +30,8 @@ pipeline {
                  steps {
                      sh "rm -rf *"
                      sh "git clone https://github.com/amitsinha1995/docker-git.git -b 23Q1"
-                     sh "chmod 777 *"
-                     sh "cp -r index.html server1://usr/local/apache2/htdocs/"
+                     sh "chmod 777 docker-git/index.html"
+                     sh "cp -r docker-git/index.html server1://usr/local/apache2/htdocs/"
                        }
                                      }
             
@@ -46,8 +46,8 @@ pipeline {
                  steps {
                      sh "rm -rf *"
                      sh "git clone https://github.com/amitsinha1995/docker-git.git -b 23Q2"
-                     sh "chmod 777 *"
-                     sh "cp -r index.html server2://usr/local/apache2/htdocs/"
+                     sh "chmod 777 docker-git/index.html"
+                     sh "cp -r docker-git/index.html server2://usr/local/apache2/htdocs/"
                        }
                                      }
 
@@ -62,8 +62,8 @@ pipeline {
                  steps {
                      sh "rm -rf *"
                      sh "git clone https://github.com/amitsinha1995/docker-git.git -b 23Q3"
-                     sh "chmod 777 *"
-                     sh "cp -r index.html server3://usr/local/apache2/htdocs/"
+                     sh "chmod 777 docker-git/index.html"
+                     sh "cp -r docker-git/index.html server3://usr/local/apache2/htdocs/"
                        }
                                     }
 
@@ -72,14 +72,14 @@ pipeline {
                  agent {
                      label {
                          label 'built-in'
-                         customWorkspace "/mnt/23Q4branch-vol/docker-git"
+                         customWorkspace "/mnt/23Q4branch-vol"
                            }
                        }
                  steps {
                      sh "rm -rf *"
                      sh "git clone https://github.com/amitsinha1995/docker-git.git -b 23Q4"
-                     sh "chmod 777 *"
-                     sh "cp -r index.html server4://usr/local/apache2/htdocs/"
+                     sh "chmod 777 docker-git/index.html"
+                     sh "cp -r docker-git/index.html server4://usr/local/apache2/htdocs/"
                        }
                                     }
 
