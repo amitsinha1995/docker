@@ -12,7 +12,7 @@ pipeline {
                      sh "docker stop server1 server2 server3 server4"
                      sh "docker rm server1 server2 server3 server4"
                      sh "docker system prune -a -f"
-                     sh "rm -rf /mnt/project/ *"
+                     sh "rm -rf /mnt/project/*"
                      sh "docker run -itdp 81:80 -v /mnt/project/23Q1branch-vol://usr/local/apache2/htdocs --name server1 httpd"
                      sh "docker run -itdp 82:80 -v /mnt/project/23Q2branch-vol://usr/local/apache2/htdocs --name server2 httpd"
                      sh "docker run -itdp 83:80 -v /mnt/project/23Q3branch-vol://usr/local/apache2/htdocs --name server3 httpd"
