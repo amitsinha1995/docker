@@ -9,8 +9,6 @@ pipeline {
 // I'll create 4 container of httpd image and sync all container with 'docker-volume' where I'll clone my feature branch.             
              stage ('container-1st-down-then-remove-then-up') {
                  steps {
-                     sh "docker stop server1 server2 server3 server4"
-                     sh "docker rm server1 server2 server3 server4"
                      sh "docker system prune -a -f"
                      sh "rm -rf /mnt/project/*"
                      sh "docker run -itdp 81:80 -v /mnt/project/23Q1branch-vol://usr/local/apache2/htdocs --name server1 httpd"
