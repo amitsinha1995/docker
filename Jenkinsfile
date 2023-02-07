@@ -12,6 +12,7 @@ pipeline {
                      sh "docker stop server1 server2 server3 server4"
                      sh "docker rm server1 server2 server3 server4"
                      sh "docker system prune -a -f"
+                     sh "rm -rf /mnt/23Q1branch-vol /mnt/23Q2branch-vol /mnt/23Q3branch-vol /mnt/23Q4branch-vol"
                      sh "docker run -itdp 81:80 -v /mnt/23Q1branch-vol://usr/local/apache2/htdocs --name server1 httpd"
                      sh "docker run -itdp 82:80 -v /mnt/23Q2branch-vol://usr/local/apache2/htdocs --name server2 httpd"
                      sh "docker run -itdp 83:80 -v /mnt/23Q3branch-vol://usr/local/apache2/htdocs --name server3 httpd"
@@ -24,7 +25,7 @@ pipeline {
                  agent {
                      label {
                          label 'built-in'
-                         customWorkspace "/mnt/23Q1branch-vol/docker-git"
+                         customWorkspace "/mnt/23Q1branch-vol"
                            }
                        }
                  steps {
@@ -40,7 +41,7 @@ pipeline {
                  agent {
                      label {
                          label 'built-in'
-                         customWorkspace "/mnt/23Q2branch-vol/docker-git"
+                         customWorkspace "/mnt/23Q2branch-vol"
                            }
                        }
                  steps {
@@ -56,7 +57,7 @@ pipeline {
                  agent {
                      label {
                          label 'built-in'
-                         customWorkspace "/mnt/23Q3branch-vol/docker-git"
+                         customWorkspace "/mnt/23Q3branch-vol"
                            }
                        }
                  steps {
