@@ -16,8 +16,8 @@ pipeline {
                        }
                                     }
 
-// Cloning 23Q1branch in server1 container synced docker volume-23Q1branch-vol            
-             stage ('23Q1branch-clone') {
+// Cloning 23Q1 branch in server1 container synced docker volume-23Q1branch-vol            
+             stage ('23Q1-branch-clone') {
                  agent {
                      label {
                          label 'built-in'
@@ -26,14 +26,14 @@ pipeline {
                        }
                  steps {
                      sh "rm -rf *"
-                     sh "git clone https://github.com/amitsinha1995/docker.git -b 23Q1branch"
+                     sh "git clone https://github.com/amitsinha1995/docker.git -b 23Q1"
                      sh "chmod 777 *"
                      sh "cp -r index.html server1://usr/local/apache2/htdocs/"
                        }
                                      }
             
-// Cloning 23Q2branch in server2 container synced docker volume-23Q2branch-vol
-             stage ('23Q2branch-clone') {
+// Cloning 23Q2 branch in server2 container synced docker volume-23Q2branch-vol
+             stage ('23Q2-branch-clone') {
                  agent {
                      label {
                          label 'built-in'
@@ -42,14 +42,14 @@ pipeline {
                        }
                  steps {
                      sh "rm -rf *"
-                     sh "git clone https://github.com/amitsinha1995/docker.git -b 23Q2branch"
+                     sh "git clone https://github.com/amitsinha1995/docker.git -b 23Q2"
                      sh "chmod 777 *"
                      sh "cp -r index.html server2://usr/local/apache2/htdocs/"
                        }
                                      }
 
-// Cloning 23Q3branch in server3 container synced docker volume-23Q3branch-vol
-            stage ('23Q3branch-clone') {
+// Cloning 23Q3 branch in server3 container synced docker volume-23Q3branch-vol
+            stage ('23Q3-branch-clone') {
                  agent {
                      label {
                          label 'built-in'
@@ -58,14 +58,14 @@ pipeline {
                        }
                  steps {
                      sh "rm -rf *"
-                     sh "git clone https://github.com/amitsinha1995/docker.git -b 23Q3branch"
+                     sh "git clone https://github.com/amitsinha1995/docker.git -b 23Q3"
                      sh "chmod 777 *"
                      sh "cp -r index.html server3://usr/local/apache2/htdocs/"
                        }
                                     }
 
-// Cloning 23Q4branch in server4 container synced docker volume-23Q4branch-vol
-           stage ('23Q4branch-clone') {
+// Cloning 23Q4 branch in server4 container synced docker volume-23Q4branch-vol
+           stage ('23Q4-branch-clone') {
                  agent {
                      label {
                          label 'built-in'
@@ -74,7 +74,7 @@ pipeline {
                        }
                  steps {
                      sh "rm -rf *"
-                     sh "git clone https://github.com/amitsinha1995/docker.git -b 23Q4branch"
+                     sh "git clone https://github.com/amitsinha1995/docker.git -b 23Q4"
                      sh "chmod 777 *"
                      sh "cp -r index.html server4://usr/local/apache2/htdocs/"
                        }
