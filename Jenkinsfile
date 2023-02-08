@@ -9,7 +9,7 @@ pipeline {
 
 // I'll create 4 container of httpd image and sync all container with 'docker-volume' where I'll clone my feature branch.
              
-             stage ('container-1st-remove) {
+             stage ('container-1st-remove') {
                  steps {
                      sh "docker system prune -a -f"
                      sh "rm -rf /mnt/project/*"
