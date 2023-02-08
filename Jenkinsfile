@@ -11,8 +11,6 @@ pipeline {
              
              stage ('container-1st-remove') {
                  steps {
-                     sh "docker stop server1 server2 server3 server4"
-                     sh "docker system prune -a -f"
                      sh "rm -rf /mnt/project/*"
                        }
                                                     }
